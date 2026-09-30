@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · Bastion</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --card: #f6f7f8;
+    --text: #16181c;
+    --sub: #5a616b;
+    --line: #e3e5e8;
+    --accent: #4d7c2a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101113;
+      --card: #17191c;
+      --text: #ecedee;
+      --sub: #9aa0a8;
+      --line: #26292e;
+      --accent: #a3e635;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.7rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
+  h2 {
+    font-size: 1.15rem; letter-spacing: -0.01em; margin: 2.5rem 0 0.75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; }
+  p, li { color: var(--text); }
+  .meta { color: var(--sub); font-size: 0.9rem; margin: 0 0 2rem; }
+  .destacado {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .destacado p { margin: 0.4rem 0; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.35rem 0; }
+  a { color: var(--accent); }
+  .idiomas { font-size: 0.9rem; color: var(--sub); margin-bottom: 2rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--sub); font-size: 0.9rem; }
+  code { background: var(--card); padding: 0.1em 0.35em; border-radius: 5px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Política de privacidad de Bastion</h1>
+  <p class="meta">Última actualización: 1 de octubre de 2026</p>
+  <p class="idiomas"><a href="#english">Read this in English ↓</a></p>
+
+  <div class="destacado">
+    <p><strong>En resumen:</strong> Bastion no tiene cuentas, no tiene servidor y no
+    recopila nada sobre ti. Todo lo que registras —peso, comidas, entrenos y
+    fotos— se guarda únicamente dentro de la app, en tu propio
+    dispositivo. Nadie más puede verlo, y quien esto escribe tampoco.</p>
+  </div>
+
+  <h2>Quién es el responsable</h2>
+  <p>Bastion es una aplicación desarrollada de forma independiente. Para
+  cualquier duda sobre esta política o sobre tus datos, puedes escribir a
+  <strong><a href="mailto:bastionapp.contact@gmail.com">bastionapp.contact@gmail.com</a></strong>.</p>
+
+  <h2>Qué datos guarda la app</h2>
+  <p>Bastion guarda en tu dispositivo lo que tú introduces:</p>
+  <ul>
+    <li><strong>Perfil</strong>: nombre, sexo, edad, altura, peso actual y peso objetivo, nivel de actividad, objetivos de calorías y macronutrientes y, si la pones, tu foto de perfil.</li>
+    <li><strong>Nutrición</strong>: los alimentos que registras cada día, con sus cantidades, y los alimentos y comidas que crees tú.</li>
+    <li><strong>Progreso</strong>: tu historial de peso y el agua que registras cada día.</li>
+    <li><strong>Entrenamiento</strong>: tus rutinas, las sesiones que completas con sus series, pesos, repeticiones, tiempos y distancias, y las notas y fotos que adjuntes a cada entreno.</li>
+    <li><strong>Ajustes</strong>: el tema, el idioma y los recordatorios que actives, con sus horas y días. La primera vez que abres la app lee el idioma configurado en tu teléfono para elegir el suyo; no lo guarda ni lo envía.</li>
+  </ul>
+  <p>Parte de esta información (peso, alimentación) es información
+  relativa a la salud, y por eso se trata con especial cuidado: <strong>no sale
+  de tu dispositivo</strong> salvo que seas tú quien la exporte a propósito.</p>
+
+  <h3>Dónde se guarda</h3>
+  <p>En el almacenamiento privado de la aplicación dentro de tu teléfono
+  (<code>AsyncStorage</code> para los datos y la carpeta de documentos de la app
+  para las fotos de entreno). No hay ninguna copia en internet: no existe
+  servidor, base de datos remota ni cuenta de usuario.</p>
+  <p>En Android, la copia de seguridad automática del sistema está
+  <strong>desactivada</strong> a propósito, para que tu historial de salud no se
+  suba a Google Drive sin que tú lo decidas.</p>
+
+  <h2>Qué sale de tu dispositivo</h2>
+  <p>La app se conecta a internet en tres situaciones, y en ninguna de ellas
+  envía tu perfil ni tu historial:</p>
+  <ul>
+    <li><strong>Escáner de códigos de barras</strong>: cuando escaneas un producto,
+    se consulta ese código de barras en
+    <a href="https://world.openfoodfacts.org" rel="noopener">Open Food Facts</a>,
+    una base de datos pública y colaborativa de alimentos. Se envía el código del
+    producto, nada más.</li>
+    <li><strong>Catálogo de alimentos</strong>: la app descarga periódicamente una
+    tabla pública de alimentos alojada en Google Sheets. Es una descarga; no se
+    envía ninguna información sobre ti.</li>
+  </ul>
+  <p>Como en cualquier conexión a una web, esos servicios reciben la dirección IP
+  desde la que se hace la petición. No reciben tu nombre, tu peso, tus comidas ni
+  ningún identificador de la app o del dispositivo creado por Bastion.</p>
+
+  <h3>Exportar tus datos</h3>
+  <p>Desde <em>Perfil → Copia de seguridad</em> puedes generar un archivo con todo
+  lo que la app guarda sobre ti. Ese archivo lo controlas tú por completo: la app
+  solo te lo entrega a través del menú de compartir del sistema. A partir del
+  momento en que lo envías a otra aplicación o servicio (correo, mensajería,
+  nube), pasa a estar sujeto a la política de privacidad de ese servicio.</p>
+
+  <h2>Permisos que pide la app</h2>
+  <ul>
+    <li><strong>Cámara</strong>: para escanear códigos de barras de alimentos y para
+    hacer la foto del resumen de tu entreno o tu foto de perfil. La imagen de la
+    cámara se procesa en el momento y no se envía a ningún sitio.</li>
+    <li><strong>Fotos</strong>: para que puedas elegir una foto de tu galería y
+    adjuntarla al resumen de un entreno o usarla como foto de perfil. La app solo
+    accede a la imagen que tú seleccionas, y la copia se queda dentro de la app.</li>
+    <li><strong>Notificaciones</strong>: para avisarte de que ha terminado el
+    descanso entre series y, si los activas, para los recordatorios de entrenar,
+    de apuntar las comidas y de pesarte. Son avisos locales, programados en tu
+    propio teléfono: no pasan por ningún servidor y no se usa ningún servicio de
+    notificaciones externo.</li>
+  </ul>
+  <p>Los tres permisos son opcionales: si los rechazas, el resto de la aplicación
+  sigue funcionando.</p>
+
+  <h2>Lo que Bastion no hace</h2>
+  <ul>
+    <li>No hay registro ni cuenta de usuario.</li>
+    <li>No hay publicidad ni redes publicitarias.</li>
+    <li>No hay analítica, estadísticas de uso ni informes de errores.</li>
+    <li>No se hace seguimiento entre aplicaciones ni entre sitios web.</li>
+    <li>No se venden, alquilan ni comparten datos con terceros. No hay datos que compartir.</li>
+  </ul>
+
+  <h2>Cuánto tiempo se conservan tus datos</h2>
+  <p>El tiempo que tú quieras. Los datos viven en tu dispositivo hasta que los
+  borras desde la propia app o desinstalas Bastion. <strong>Al desinstalar la
+  aplicación se borra todo</strong>, y no queda ninguna copia en ningún otro
+  sitio, así que exporta antes lo que quieras conservar.</p>
+
+  <h2>Tus derechos</h2>
+  <p>Como todos los datos están en tu dispositivo y bajo tu control directo,
+  puedes consultarlos, modificarlos, exportarlos (en un archivo JSON legible) y
+  borrarlos en cualquier momento sin pedir permiso a nadie. Si además quieres
+  ejercer formalmente los derechos que te reconoce el Reglamento General de
+  Protección de Datos, escribe a la dirección de contacto de arriba.</p>
+
+  <h2>Menores</h2>
+  <p>Bastion no está dirigida a menores de 13 años y no recopila
+  intencionadamente información de ellos.</p>
+
+  <h2>Cambios en esta política</h2>
+  <p>Si en el futuro la aplicación cambia la forma en que trata la información,
+  esta página se actualizará y cambiará la fecha del encabezado. Si el cambio
+  fuese significativo, se avisará dentro de la propia aplicación.</p>
+
+  <hr style="border:0;border-top:1px solid var(--line);margin:3.5rem 0 0">
+
+  <h1 id="english" style="margin-top:2.5rem">Bastion Privacy Policy</h1>
+  <p class="meta">Last updated: 1 October 2026</p>
+
+  <div class="destacado">
+    <p><strong>In short:</strong> Bastion has no accounts, no server and collects
+    nothing about you. Everything you record — weight, meals, workouts and
+    photos — is stored only inside the app, on your own device. No
+    one else can see it, including the developer.</p>
+  </div>
+
+  <h2>Who is responsible</h2>
+  <p>Bastion is an independently developed application. For any question about
+  this policy or about your data, write to <strong><a href="mailto:bastionapp.contact@gmail.com">bastionapp.contact@gmail.com</a></strong>.</p>
+
+  <h2>What the app stores</h2>
+  <p>Bastion stores on your device whatever you enter:</p>
+  <ul>
+    <li><strong>Profile</strong>: name, sex, age, height, current and target weight, activity level, your calorie and macronutrient goals and, if you set one, your profile picture.</li>
+    <li><strong>Nutrition</strong>: the foods you log each day with their amounts, and any foods or meals you create yourself.</li>
+    <li><strong>Progress</strong>: your weight history and daily water intake.</li>
+    <li><strong>Training</strong>: your routines, completed sessions with their sets, weights, repetitions, times and distances, and any notes or photos you attach to a workout.</li>
+    <li><strong>Settings</strong>: your chosen theme and language, and any reminders you enable with their times and days. The first time you open the app it reads the language set on your phone to pick its own; it does not store or send it.</li>
+  </ul>
+  <p>Some of this is health-related information, and it is treated accordingly:
+  <strong>it never leaves your device</strong> unless you deliberately export
+  it.</p>
+
+  <h3>Where it is stored</h3>
+  <p>In the app's private storage on your phone (<code>AsyncStorage</code> for
+  data, the app's documents folder for workout photos). There is no copy on the
+  internet: no server, no remote database, no user account.</p>
+  <p>On Android, the system's automatic backup is deliberately
+  <strong>disabled</strong>, so your health history is not uploaded to Google
+  Drive without your decision.</p>
+
+  <h2>What leaves your device</h2>
+  <p>The app connects to the internet in three situations, and none of them sends
+  your profile or your history:</p>
+  <ul>
+    <li><strong>Barcode scanner</strong>: when you scan a product, that barcode is
+    looked up on <a href="https://world.openfoodfacts.org" rel="noopener">Open Food
+    Facts</a>, a public collaborative food database. Only the product code is
+    sent.</li>
+    <li><strong>Food catalogue</strong>: the app periodically downloads a public
+    food table hosted on Google Sheets. It is a download; no information about you
+    is sent.</li>
+  </ul>
+  <p>As with any web connection, those services receive the IP address the request
+  comes from. They do not receive your name, your weight, your meals, or any app
+  or device identifier created by Bastion.</p>
+
+  <h3>Exporting your data</h3>
+  <p>Under <em>Profile → Backup</em> you can generate a file containing everything
+  the app stores about you. That file is entirely under your control: the app only
+  hands it to you through the system share sheet. Once you send it to another app
+  or service (email, messaging, cloud storage), it becomes subject to that
+  service's privacy policy.</p>
+
+  <h2>Permissions the app requests</h2>
+  <ul>
+    <li><strong>Camera</strong>: to scan food barcodes and to take the photo for
+    your workout summary or your profile picture. The camera image is processed
+    on the spot and is not sent anywhere.</li>
+    <li><strong>Photos</strong>: so you can pick an image from your gallery and
+    attach it to a workout summary or use it as your profile picture. The app only
+    accesses the image you select, and the copy stays inside the app.</li>
+    <li><strong>Notifications</strong>: to let you know when the rest between sets
+    is over and, if you enable them, for the reminders to train, to log your meals
+    and to weigh in. They are local notifications scheduled on your own phone: they
+    go through no server and use no external notification service.</li>
+  </ul>
+  <p>All three permissions are optional: if you decline them, the rest of the app
+  keeps working.</p>
+
+  <h2>What Bastion does not do</h2>
+  <ul>
+    <li>No sign-up, no user account.</li>
+    <li>No advertising, no ad networks.</li>
+    <li>No analytics, usage tracking or crash reporting.</li>
+    <li>No tracking across apps or websites.</li>
+    <li>No selling, renting or sharing of data with third parties. There is no data to share.</li>
+  </ul>
+
+  <h2>How long your data is kept</h2>
+  <p>For as long as you want. Data lives on your device until you delete it from
+  within the app or uninstall Bastion. <strong>Uninstalling the app deletes
+  everything</strong>, and no copy remains anywhere else, so export first whatever
+  you want to keep.</p>
+
+  <h2>Your rights</h2>
+  <p>Because all data is on your device and under your direct control, you can
+  view, edit, export (as a readable JSON file) and delete it at any time without
+  asking anyone. If you also wish to formally exercise your rights under the
+  General Data Protection Regulation, write to the contact address above.</p>
+
+  <h2>Children</h2>
+  <p>Bastion is not directed at children under 13 and does not knowingly collect
+  information from them.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the app ever changes how it handles information, this page will be updated
+  and the date at the top will change. If the change is significant, you will be
+  notified inside the app.</p>
+
+  <footer>
+    <a href="./">Bastion · Soporte / Support</a> · Política de privacidad / Privacy Policy · 1 · 10 · 2026
+  </footer>
+
+</main>
+</body>
+</html>
