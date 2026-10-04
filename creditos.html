@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créditos de datos · Bastion</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --card: #f6f7f8;
+    --text: #16181c;
+    --sub: #5a616b;
+    --line: #e3e5e8;
+    --accent: #4d7c2a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101113;
+      --card: #17191c;
+      --text: #ecedee;
+      --sub: #9aa0a8;
+      --line: #26292e;
+      --accent: #a3e635;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.7rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
+  h2 {
+    font-size: 1.15rem; letter-spacing: -0.01em; margin: 2.5rem 0 0.75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; }
+  p, li { color: var(--text); }
+  .meta { color: var(--sub); font-size: 0.9rem; margin: 0 0 2rem; }
+  .destacado {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .destacado p { margin: 0.4rem 0; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.35rem 0; }
+  a { color: var(--accent); }
+  .idiomas { font-size: 0.9rem; color: var(--sub); margin-bottom: 2rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--sub); font-size: 0.9rem; }
+  code { background: var(--card); padding: 0.1em 0.35em; border-radius: 5px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Créditos de los datos de alimentos</h1>
+  <p class="meta">Última actualización: 4 de octubre de 2026</p>
+  <p class="idiomas"><a href="#english">Read this in English ↓</a></p>
+
+  <p>Los valores nutricionales del buscador de alimentos de Bastion salen de
+  estas bases de datos públicas. Bastion los <strong>adapta</strong>: traduce los
+  nombres, agrupa alimentos, elige una ficha cuando hay varias y calcula
+  raciones por unidad (un huevo, una rebanada…) a partir de los valores por
+  100&nbsp;g. Estas adaptaciones son de Bastion y no están avaladas por ninguno
+  de los organismos citados.</p>
+
+  <h2>Ciqual (Francia)</h2>
+  <p>Anses. 2020. Table de composition nutritionnelle des aliments Ciqual.
+  <a href="https://ciqual.anses.fr/" rel="noopener">ciqual.anses.fr</a>.
+  Datos publicados con la
+  <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence/" rel="noopener">Licence Ouverte / Open Licence 2.0</a>
+  (Etalab). Última actualización de la fuente utilizada: 2020.</p>
+
+  <h2>CoFID (Reino Unido)</h2>
+  <p>McCance and Widdowson's The Composition of Foods Integrated Dataset 2021.
+  Contains public sector information licensed under the
+  <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="noopener">Open Government Licence v3.0</a>.</p>
+
+  <h2>USDA FoodData Central (Estados Unidos)</h2>
+  <p>U.S. Department of Agriculture, Agricultural Research Service. FoodData
+  Central, SR Legacy.
+  <a href="https://fdc.nal.usda.gov/" rel="noopener">fdc.nal.usda.gov</a>.
+  Datos de dominio público.</p>
+
+  <h2>BEDCA (España)</h2>
+  <p>Base de Datos Española de Composición de Alimentos (BEDCA). Agencia
+  Española de Seguridad Alimentaria y Nutrición (AESAN).
+  <a href="https://www.bedca.net/" rel="noopener">bedca.net</a>.</p>
+
+  <h2>Open Food Facts</h2>
+  <p>El escáner de códigos de barras consulta
+  <a href="https://world.openfoodfacts.org" rel="noopener">Open Food Facts</a>,
+  base de datos colaborativa publicada con la
+  <a href="https://opendatacommons.org/licenses/odbl/1-0/" rel="noopener">Open Database License (ODbL)</a>.</p>
+
+  <hr style="border:0;border-top:1px solid var(--line);margin:3.5rem 0 0">
+
+  <h1 id="english" style="margin-top:2.5rem">Food data credits</h1>
+  <p class="meta">Last updated: 4 October 2026</p>
+
+  <p>The nutrition values in Bastion's food search come from these public
+  databases. Bastion <strong>adapts</strong> them: it translates names, merges
+  foods, picks one entry when there are several and works out per-item servings
+  (one egg, one slice…) from the values per 100&nbsp;g. These adaptations are
+  Bastion's own and are not endorsed by any of the bodies listed.</p>
+
+  <h2>Ciqual (France)</h2>
+  <p>Anses. 2020. Ciqual French food composition table.
+  <a href="https://ciqual.anses.fr/" rel="noopener">ciqual.anses.fr</a>.
+  Data published under the
+  <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence/" rel="noopener">Licence Ouverte / Open Licence 2.0</a>
+  (Etalab). Source last updated: 2020.</p>
+
+  <h2>CoFID (United Kingdom)</h2>
+  <p>McCance and Widdowson's The Composition of Foods Integrated Dataset 2021.
+  Contains public sector information licensed under the
+  <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="noopener">Open Government Licence v3.0</a>.</p>
+
+  <h2>USDA FoodData Central (United States)</h2>
+  <p>U.S. Department of Agriculture, Agricultural Research Service. FoodData
+  Central, SR Legacy.
+  <a href="https://fdc.nal.usda.gov/" rel="noopener">fdc.nal.usda.gov</a>.
+  Public domain data.</p>
+
+  <h2>BEDCA (Spain)</h2>
+  <p>Spanish Food Composition Database (BEDCA). Spanish Agency for Food Safety
+  and Nutrition (AESAN).
+  <a href="https://www.bedca.net/" rel="noopener">bedca.net</a>.</p>
+
+  <h2>Open Food Facts</h2>
+  <p>The barcode scanner looks products up on
+  <a href="https://world.openfoodfacts.org" rel="noopener">Open Food Facts</a>,
+  a collaborative database available under the
+  <a href="https://opendatacommons.org/licenses/odbl/1-0/" rel="noopener">Open Database License (ODbL)</a>.</p>
+
+  <footer>
+    <a href="./">Bastion · Soporte / Support</a> · Créditos / Credits · 4 · 10 · 2026
+  </footer>
+
+</main>
+</body>
+</html>
