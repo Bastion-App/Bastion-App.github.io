@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rutina compartida · Bastion</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --card: #f6f7f8;
+    --text: #16181c;
+    --sub: #5a616b;
+    --line: #e3e5e8;
+    --accent: #4d7c2a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101113;
+      --card: #17191c;
+      --text: #ecedee;
+      --sub: #9aa0a8;
+      --line: #26292e;
+      --accent: #a3e635;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.7rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
+  h2 {
+    font-size: 1.15rem; letter-spacing: -0.01em; margin: 2.5rem 0 0.75rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; }
+  p, li { color: var(--text); }
+  .meta { color: var(--sub); font-size: 0.9rem; margin: 0 0 2rem; }
+  .destacado {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1rem 1.25rem; margin: 1.5rem 0;
+  }
+  .destacado p { margin: 0.4rem 0; }
+  ul { padding-left: 1.25rem; }
+  li { margin: 0.35rem 0; }
+  a { color: var(--accent); }
+  .idiomas { font-size: 0.9rem; color: var(--sub); margin-bottom: 2rem; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--sub); font-size: 0.9rem; }
+  code { background: var(--card); padding: 0.1em 0.35em; border-radius: 5px; font-size: 0.9em; }
+  .centro { text-align: center; padding-top: 3rem; }
+  .boton {
+    display: inline-block; margin: 1.5rem 0 1rem; padding: 0.9rem 1.6rem;
+    border-radius: 14px; background: var(--accent); color: var(--bg);
+    font-weight: 700; text-decoration: none;
+  }
+  .sub { color: var(--sub); font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main class="centro">
+
+  <h1 id="titulo">Abriendo la rutina en Bastion…</h1>
+  <p class="sub" id="texto">Si no se abre sola, toca el botón.</p>
+  <a class="boton" id="abrir" href="#">Abrir en Bastion</a>
+  <p class="sub" id="sinApp">¿No tienes Bastion? <a href="../">Descárgala aquí</a>.</p>
+
+</main>
+<script>
+  // El código de la rutina va en el fragmento (#rutina/CODE): no llega a
+  // ningún servidor y la app lo lee igual que bastion://rutina/CODE.
+  (function () {
+    var m = location.hash.match(/rutina\/([A-Za-z0-9_-]+)/);
+    var en = !/^es/i.test(navigator.language || '');
+    if (en) {
+      document.documentElement.lang = 'en';
+      document.getElementById('titulo').textContent = 'Opening the routine in Bastion…';
+      document.getElementById('texto').textContent = "If it doesn't open by itself, tap the button.";
+      document.getElementById('abrir').textContent = 'Open in Bastion';
+      document.getElementById('sinApp').innerHTML = "Don't have Bastion? <a href=\"../\">Get it here</a>.";
+    }
+    if (!m) {
+      document.getElementById('titulo').textContent = en ? 'This link has no routine' : 'Este enlace no trae ninguna rutina';
+      document.getElementById('texto').textContent = en ? 'It may have been cut off when copying it.' : 'Puede que se cortara al copiarlo.';
+      document.getElementById('abrir').style.display = 'none';
+      return;
+    }
+    var app = 'bastion://rutina/' + m[1];
+    document.getElementById('abrir').href = app;
+    location.href = app;
+  })();
+</script>
+</body>
+</html>
