@@ -75,7 +75,7 @@
   // El código de la rutina va como consulta (/r/?CODE). Los enlaces de antes
   // lo llevaban en el fragmento (#rutina/CODE) y se siguen aceptando.
   (function () {
-    var m = location.search.match(/^\?([A-Za-z0-9_-]+)/) || location.hash.match(/rutina\/([A-Za-z0-9_-]+)/);
+    var m = location.search.match(/^\?([A-Za-z0-9._-]+)/) || location.hash.match(/rutina\/([A-Za-z0-9._-]+)/);
     var en = !/^es/i.test(navigator.language || '');
     if (en) {
       document.documentElement.lang = 'en';
