@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["5MBT2X548N.com.isonna.Bastion"],
+        "components": [
+          { "/": "/r/*", "comment": "Rutina compartida: abre Bastion directamente" }
+        ]
+      }
+    ]
+  }
+}
