@@ -1,147 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bastion · Soporte</title>
-<meta name="description" content="Bastion - Gym y Nutrición: registro de entrenos y contador de calorías. Soporte y contacto.">
-<style>
-  :root {
-    color-scheme: light dark;
-    --bg: #ffffff;
-    --card: #f6f7f8;
-    --text: #16181c;
-    --sub: #5a616b;
-    --line: #e3e5e8;
-    --accent: #4d7c2a;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #101113;
-      --card: #17191c;
-      --text: #ecedee;
-      --sub: #9aa0a8;
-      --line: #26292e;
-      --accent: #a3e635;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
-  h1 { font-size: 1.7rem; line-height: 1.25; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
-  h2 {
-    font-size: 1.15rem; letter-spacing: -0.01em; margin: 2.5rem 0 0.75rem;
-    padding-top: 1.5rem; border-top: 1px solid var(--line);
-  }
-  h3 { font-size: 1rem; margin: 1.5rem 0 0.4rem; }
-  p { margin: 0.5rem 0; }
-  .meta { color: var(--sub); font-size: 1rem; margin: 0 0 2rem; }
-  .destacado {
-    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 1rem 1.25rem; margin: 1.5rem 0;
-  }
-  .destacado p { margin: 0.4rem 0; }
-  a { color: var(--accent); }
-  .idiomas { font-size: 0.9rem; color: var(--sub); margin-bottom: 2rem; }
-  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--sub); font-size: 0.9rem; }
-</style>
+<title>Bastion</title>
+<!-- Vista previa de Bastion Web (diseño de Claude Design, datos de ejemplo):
+     todavía no es la web de verdad, así que no se indexa. -->
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="demo/web.css">
 </head>
 <body>
-<main>
-
-  <h1>Bastion · Gym y Nutrición</h1>
-  <p class="meta">Registro de entrenos y contador de calorías, en una sola app.</p>
-  <p class="idiomas"><a href="#english">Read this in English ↓</a></p>
-
-  <div class="destacado">
-    <p><strong>¿Necesitas ayuda?</strong> Escribe a
-    <a href="mailto:bastionapp.contact@gmail.com">bastionapp.contact@gmail.com</a>.
-    Cuéntanos qué ha pasado y, si puedes, añade una captura de pantalla y la versión
-    de la app (sale al final de Perfil).</p>
-  </div>
-
-  <h2>Preguntas frecuentes</h2>
-
-  <h3>¿Dónde se guardan mis datos?</h3>
-  <p>Solo en tu móvil. Bastion no tiene cuentas ni servidor: tu peso, tus comidas,
-  tus entrenos y tus fotos no salen del dispositivo. Más detalles en la
-  <a href="privacidad.html">política de privacidad</a>.</p>
-
-  <h3>¿Cómo paso mis datos a otro móvil?</h3>
-  <p>En <strong>Perfil › Copia de seguridad</strong>, toca <strong>Exportar mis
-  datos</strong> y guarda el archivo donde quieras (Archivos, iCloud, correo…). En el
-  móvil nuevo, instala Bastion y en el mismo sitio toca <strong>Restaurar una
-  copia</strong>. Restaurar sustituye todo lo que haya en la app. Las fotos de los
-  entrenos y la de perfil no viajan dentro del archivo.</p>
-
-  <h3>Si desinstalo la app, ¿pierdo mis datos?</h3>
-  <p>Sí: como solo están en el móvil, desinstalar los borra. Exporta una copia de
-  seguridad de vez en cuando para no perderlos.</p>
-
-  <h3>¿Cómo borro todos mis datos?</h3>
-  <p>Desinstala la app: con ella se borra todo lo que guardaba. No hay nada que pedir
-  que se elimine de ningún servidor, porque no lo hay.</p>
-
-  <h3>¿La app es gratis?</h3>
-  <p>Sí, gratis y sin anuncios.</p>
-
-  <h3>¿Se puede usar en inglés?</h3>
-  <p>Sí. En <strong>Perfil</strong> puedes cambiar el idioma entre español e
-  inglés.</p>
-
-  <!-- ─────────────────────────────── ENGLISH ─────────────────────────────── -->
-
-  <h1 id="english" style="margin-top:4rem">Bastion · Gym &amp; Nutrition</h1>
-  <p class="meta">Workout log and calorie counter, in one app.</p>
-
-  <div class="destacado">
-    <p><strong>Need help?</strong> Write to
-    <a href="mailto:bastionapp.contact@gmail.com">bastionapp.contact@gmail.com</a>.
-    Tell us what happened and, if you can, include a screenshot and the app version
-    (shown at the bottom of Profile).</p>
-  </div>
-
-  <h2>Frequently asked questions</h2>
-
-  <h3>Where is my data stored?</h3>
-  <p>Only on your phone. Bastion has no accounts and no server: your weight, meals,
-  workouts and photos never leave the device. More in the
-  <a href="privacidad.html#english">privacy policy</a>.</p>
-
-  <h3>How do I move my data to another phone?</h3>
-  <p>In <strong>Profile › Backup</strong>, tap <strong>Export my data</strong> and save
-  the file wherever you like (Files, iCloud, email…). On the new phone, install
-  Bastion and tap <strong>Restore a backup</strong> in the same place. Restoring
-  replaces everything currently in the app. Workout photos and the profile photo
-  are not included in the file.</p>
-
-  <h3>If I uninstall the app, do I lose my data?</h3>
-  <p>Yes: since it only lives on the phone, uninstalling deletes it. Export a backup
-  from time to time so you don't lose it.</p>
-
-  <h3>How do I delete all my data?</h3>
-  <p>Uninstall the app: everything it stored is deleted with it. There is nothing to
-  request deletion from on any server, because there isn't one.</p>
-
-  <h3>Is the app free?</h3>
-  <p>Yes, free and with no ads.</p>
-
-  <h3>Can I use it in English?</h3>
-  <p>Yes. You can switch the language between Spanish and English in
-  <strong>Profile</strong>.</p>
-
-  <footer>
-    <p><a href="privacidad.html">Política de privacidad · Privacy policy</a></p>
-    <p><a href="creditos.html">Créditos de datos · Data credits</a></p>
-    <p>© 2026 Bastion</p>
-  </footer>
-
-</main>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="demo/Data3.jsx"></script>
+<script type="text/babel" src="demo/Core3.jsx"></script>
+<script type="text/babel" src="demo/WebCommon.jsx"></script>
+<script type="text/babel" src="demo/WebNutri.jsx"></script>
+<script type="text/babel" src="demo/WebTrain.jsx"></script>
+<script type="text/babel" src="demo/WebProgress.jsx"></script>
+<script type="text/babel" src="demo/WebProfile.jsx"></script>
+<script type="text/babel" src="demo/WebHome.jsx"></script>
+<script type="text/babel" src="demo/WebApp.jsx"></script>
 </body>
 </html>
