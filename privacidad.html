@@ -58,14 +58,16 @@
 <main>
 
   <h1>Política de privacidad de Bastion</h1>
-  <p class="meta">Última actualización: 1 de octubre de 2026</p>
+  <p class="meta">Última actualización: 21 de octubre de 2026</p>
   <p class="idiomas"><a href="#english">Read this in English ↓</a></p>
 
   <div class="destacado">
     <p><strong>En resumen:</strong> Bastion no tiene cuentas, no tiene servidor y no
-    recopila nada sobre ti. Todo lo que registras —peso, comidas, entrenos y
-    fotos— se guarda únicamente dentro de la app, en tu propio
-    dispositivo. Nadie más puede verlo, y quien esto escribe tampoco.</p>
+    recopila nada sobre ti por su cuenta. Todo lo que registras —peso, comidas,
+    entrenos y fotos— se guarda únicamente dentro de la app, en tu propio
+    dispositivo. Nadie más puede verlo, y quien esto escribe tampoco. Solo nos
+    llega algo si tú decides enviarlo: un fallo o una sugerencia desde el
+    Perfil.</p>
   </div>
 
   <h2>Quién es el responsable</h2>
@@ -89,15 +91,19 @@
   <h3>Dónde se guarda</h3>
   <p>En el almacenamiento privado de la aplicación dentro de tu teléfono
   (<code>AsyncStorage</code> para los datos y la carpeta de documentos de la app
-  para las fotos de entreno). No hay ninguna copia en internet: no existe
-  servidor, base de datos remota ni cuenta de usuario.</p>
+  para las fotos de entreno). Bastion no guarda ninguna copia en internet: no
+  existe servidor, base de datos remota ni cuenta de usuario.</p>
+  <p>En iPhone, si tienes activada la copia de seguridad de iCloud (o la del
+  ordenador), iOS incluye en ella los datos de tus apps, también los de Bastion.
+  Esa copia es del sistema, va asociada a tu cuenta de Apple y Bastion no tiene
+  acceso a ella; puedes gestionarla en <em>Ajustes → [tu nombre] → iCloud</em>.</p>
   <p>En Android, la copia de seguridad automática del sistema está
   <strong>desactivada</strong> a propósito, para que tu historial de salud no se
   suba a Google Drive sin que tú lo decidas.</p>
 
   <h2>Qué sale de tu dispositivo</h2>
-  <p>La app se conecta a internet en tres situaciones, y en ninguna de ellas
-  envía tu perfil ni tu historial:</p>
+  <p>La app se conecta a internet por su cuenta en tres situaciones, y en ninguna
+  de ellas envía tu perfil ni tu historial:</p>
   <ul>
     <li><strong>Escáner de códigos de barras</strong>: cuando escaneas un producto,
     se consulta ese código de barras en
@@ -107,10 +113,39 @@
     <li><strong>Catálogo de alimentos</strong>: la app descarga periódicamente una
     tabla pública de alimentos alojada en Google Sheets. Es una descarga; no se
     envía ninguna información sobre ti.</li>
+    <li><strong>Actualizaciones de la app</strong>: al abrirla y al volver a ella,
+    la app pregunta a los servidores de Expo (EAS Update, la plataforma con la que
+    se publica Bastion) si hay una versión nueva y, si la hay, la descarga. En esa
+    consulta van la versión de la app, la plataforma (iOS o Android) y un
+    identificador aleatorio de instalación que genera Expo para repartir las
+    actualizaciones. No va ningún dato tuyo.</li>
   </ul>
   <p>Como en cualquier conexión a una web, esos servicios reciben la dirección IP
   desde la que se hace la petición. No reciben tu nombre, tu peso, tus comidas ni
-  ningún identificador de la app o del dispositivo creado por Bastion.</p>
+  nada de lo que registras; el único identificador que se envía es el de
+  instalación de las actualizaciones, que no está ligado a ti ni a tus datos.</p>
+
+  <h3>Reportar un fallo o enviar una sugerencia</h3>
+  <p>En <em>Perfil</em>, el botón del bichito (arriba a la derecha) te deja
+  enviarnos un fallo o una sugerencia sin salir de la app. Solo se envía si tú
+  lo escribes y pulsas <em>Enviar</em>; la app nunca manda informes por su
+  cuenta. Lo que se envía es:</p>
+  <ul>
+    <li>el tipo (fallo o sugerencia), el título y el texto que escribas;</li>
+    <li>las capturas que adjuntes, si adjuntas alguna (hasta tres);</li>
+    <li>datos técnicos para poder reproducir el fallo: la versión de la app, su
+    última actualización y su canal de distribución, el sistema (iOS o Android y su versión, y en Android
+    el modelo del teléfono), la pantalla desde la que se envía, el idioma de la
+    app y la fecha y hora.</li>
+  </ul>
+  <p>No se envía tu nombre, tu perfil ni nada de lo que registras (peso, comidas,
+  entrenos), salvo lo que tú escribas en el texto o aparezca en las capturas que
+  elijas. El envío pasa por un servicio de Google (Apps Script) que lo convierte
+  en un correo a <strong>bastionapp.contact@gmail.com</strong>; como cualquier
+  conexión, Google recibe la dirección IP desde la que se hace. Se usa solo para
+  arreglar fallos y mejorar la app, se conserva en ese correo mientras haga falta
+  para atenderlo y puedes pedir que se borre escribiendo a esa misma
+  dirección.</p>
 
   <h3>Exportar tus datos</h3>
   <p>Desde <em>Perfil → Copia de seguridad</em> puedes generar un archivo con todo
@@ -119,6 +154,14 @@
   momento en que lo envías a otra aplicación o servicio (correo, mensajería,
   nube), pasa a estar sujeto a la política de privacidad de ese servicio.</p>
 
+  <h3>Compartir</h3>
+  <p>Si compartes una rutina, la app crea un enlace que lleva la rutina dentro
+  (su nombre, ejercicios, series y descansos) para que quien lo reciba pueda
+  importarla; al abrirlo en un navegador, la página de bastionfit.app lo recibe
+  como cualquier web. Si compartes la tarjeta de un entreno, la imagen va a la
+  aplicación que tú elijas. En los dos casos sale solo lo que decides compartir,
+  y solo hacia quien tú eliges.</p>
+
   <h2>Permisos que pide la app</h2>
   <ul>
     <li><strong>Cámara</strong>: para escanear códigos de barras de alimentos y para
@@ -126,7 +169,10 @@
     cámara se procesa en el momento y no se envía a ningún sitio.</li>
     <li><strong>Fotos</strong>: para que puedas elegir una foto de tu galería y
     adjuntarla al resumen de un entreno o usarla como foto de perfil. La app solo
-    accede a la imagen que tú seleccionas, y la copia se queda dentro de la app.</li>
+    accede a la imagen que tú seleccionas, y la copia se queda dentro de la app.
+    Si al compartir un entreno eliges <em>Guardar imagen</em>, la app pide permiso
+    para <strong>añadir</strong> esa tarjeta a tus fotos; con ese permiso no puede
+    ver tu galería.</li>
     <li><strong>Notificaciones</strong>: para avisarte de que ha terminado el
     descanso entre series y, si los activas, para los recordatorios de entrenar,
     de apuntar las comidas y de pesarte. Son avisos locales, programados en tu
@@ -140,7 +186,7 @@
   <ul>
     <li>No hay registro ni cuenta de usuario.</li>
     <li>No hay publicidad ni redes publicitarias.</li>
-    <li>No hay analítica, estadísticas de uso ni informes de errores.</li>
+    <li>No hay analítica, estadísticas de uso ni informes de errores automáticos: solo nos llegan los fallos que tú decides enviar.</li>
     <li>No se hace seguimiento entre aplicaciones ni entre sitios web.</li>
     <li>No se venden, alquilan ni comparten datos con terceros. No hay datos que compartir.</li>
   </ul>
@@ -148,13 +194,15 @@
   <h2>Cuánto tiempo se conservan tus datos</h2>
   <p>El tiempo que tú quieras. Los datos viven en tu dispositivo hasta que los
   borras desde la propia app o desinstalas Bastion. <strong>Al desinstalar la
-  aplicación se borra todo</strong>, y no queda ninguna copia en ningún otro
-  sitio, así que exporta antes lo que quieras conservar.</p>
+  aplicación se borra todo</strong> lo que hay en el teléfono; solo quedan las
+  copias que tú hayas exportado y, en iPhone, la copia de iCloud del sistema si
+  la tienes activada. Exporta antes lo que quieras conservar.</p>
 
   <h2>Tus derechos</h2>
   <p>Como todos los datos están en tu dispositivo y bajo tu control directo,
   puedes consultarlos, modificarlos, exportarlos (en un archivo JSON legible) y
-  borrarlos en cualquier momento sin pedir permiso a nadie. Si además quieres
+  borrarlos en cualquier momento sin pedir permiso a nadie. Si nos has enviado un
+  fallo o una sugerencia, puedes pedir que se borre. Si además quieres
   ejercer formalmente los derechos que te reconoce el Reglamento General de
   Protección de Datos, escribe a la dirección de contacto de arriba.</p>
 
@@ -170,13 +218,14 @@
   <hr style="border:0;border-top:1px solid var(--line);margin:3.5rem 0 0">
 
   <h1 id="english" style="margin-top:2.5rem">Bastion Privacy Policy</h1>
-  <p class="meta">Last updated: 1 October 2026</p>
+  <p class="meta">Last updated: October 21, 2026</p>
 
   <div class="destacado">
     <p><strong>In short:</strong> Bastion has no accounts, no server and collects
-    nothing about you. Everything you record — weight, meals, workouts and
-    photos — is stored only inside the app, on your own device. No
-    one else can see it, including the developer.</p>
+    nothing about you on its own. Everything you record — weight, meals, workouts
+    and photos — is stored only inside the app, on your own device. No one else
+    can see it, including the developer. We only receive something if you choose
+    to send it: a bug report or a suggestion from your Profile.</p>
   </div>
 
   <h2>Who is responsible</h2>
@@ -198,27 +247,58 @@
 
   <h3>Where it is stored</h3>
   <p>In the app's private storage on your phone (<code>AsyncStorage</code> for
-  data, the app's documents folder for workout photos). There is no copy on the
-  internet: no server, no remote database, no user account.</p>
+  data, the app's documents folder for workout photos). Bastion keeps no copy on
+  the internet: no server, no remote database, no user account.</p>
+  <p>On iPhone, if you have iCloud (or computer) backup turned on, iOS includes
+  your apps' data in it, Bastion's too. That backup belongs to the system, is tied
+  to your Apple account and Bastion cannot access it; you can manage it under
+  <em>Settings → [your name] → iCloud</em>.</p>
   <p>On Android, the system's automatic backup is deliberately
   <strong>disabled</strong>, so your health history is not uploaded to Google
   Drive without your decision.</p>
 
   <h2>What leaves your device</h2>
-  <p>The app connects to the internet in three situations, and none of them sends
-  your profile or your history:</p>
+  <p>The app connects to the internet on its own in three situations, and none of
+  them sends your profile or your history:</p>
   <ul>
     <li><strong>Barcode scanner</strong>: when you scan a product, that barcode is
     looked up on <a href="https://world.openfoodfacts.org" rel="noopener">Open Food
     Facts</a>, a public collaborative food database. Only the product code is
     sent.</li>
-    <li><strong>Food catalogue</strong>: the app periodically downloads a public
+    <li><strong>Food catalog</strong>: the app periodically downloads a public
     food table hosted on Google Sheets. It is a download; no information about you
     is sent.</li>
+    <li><strong>App updates</strong>: when you open the app and when you return to
+    it, it asks Expo's servers (EAS Update, the platform Bastion is published with)
+    whether there is a new version and, if so, downloads it. That request carries
+    the app version, the platform (iOS or Android) and a random installation
+    identifier generated by Expo to deliver updates. None of your data is
+    included.</li>
   </ul>
   <p>As with any web connection, those services receive the IP address the request
-  comes from. They do not receive your name, your weight, your meals, or any app
-  or device identifier created by Bastion.</p>
+  comes from. They do not receive your name, your weight, your meals or anything
+  you log; the only identifier sent is the update installation identifier, which
+  is not linked to you or your data.</p>
+
+  <h3>Reporting a bug or sending a suggestion</h3>
+  <p>In <em>Profile</em>, the bug button (top right) lets you send us a bug report
+  or a suggestion without leaving the app. It is only sent if you write it and
+  tap <em>Send</em>; the app never sends reports on its own. What is sent:</p>
+  <ul>
+    <li>the type (bug or suggestion), the title and the text you write;</li>
+    <li>any screenshots you attach, if you attach any (up to three);</li>
+    <li>technical details to reproduce the bug: the app version, its latest update
+    and its distribution channel, the system (iOS or Android and its version, and on Android the phone
+    model), the screen it is sent from, the app language and the date and
+    time.</li>
+  </ul>
+  <p>Your name, your profile and anything you log (weight, meals, workouts) are not
+  sent, except for whatever you write in the text or appears in the screenshots
+  you choose. The report goes through a Google service (Apps Script) that turns it
+  into an email to <strong>bastionapp.contact@gmail.com</strong>; as with any
+  connection, Google receives the IP address it comes from. It is used only to fix
+  bugs and improve the app, kept in that mailbox for as long as needed to handle
+  it, and you can ask for it to be deleted by writing to that same address.</p>
 
   <h3>Exporting your data</h3>
   <p>Under <em>Profile → Backup</em> you can generate a file containing everything
@@ -227,6 +307,14 @@
   or service (email, messaging, cloud storage), it becomes subject to that
   service's privacy policy.</p>
 
+  <h3>Sharing</h3>
+  <p>If you share a routine, the app creates a link that carries the routine
+  inside it (its name, exercises, sets and rest times) so the recipient can import
+  it; when opened in a browser, the bastionfit.app page receives it like any
+  website. If you share a workout card, the image goes to the app you choose. In
+  both cases only what you decide to share leaves, and only to whoever you
+  choose.</p>
+
   <h2>Permissions the app requests</h2>
   <ul>
     <li><strong>Camera</strong>: to scan food barcodes and to take the photo for
@@ -234,7 +322,10 @@
     on the spot and is not sent anywhere.</li>
     <li><strong>Photos</strong>: so you can pick an image from your gallery and
     attach it to a workout summary or use it as your profile picture. The app only
-    accesses the image you select, and the copy stays inside the app.</li>
+    accesses the image you select, and the copy stays inside the app. If you choose
+    <em>Save Image</em> when sharing a workout, the app asks for permission to
+    <strong>add</strong> that card to your photos; that permission cannot see your
+    library.</li>
     <li><strong>Notifications</strong>: to let you know when the rest between sets
     is over and, if you enable them, for the reminders to train, to log your meals
     and to weigh in. They are local notifications scheduled on your own phone: they
@@ -247,7 +338,7 @@
   <ul>
     <li>No sign-up, no user account.</li>
     <li>No advertising, no ad networks.</li>
-    <li>No analytics, usage tracking or crash reporting.</li>
+    <li>No analytics, usage tracking or automatic crash reporting: we only receive the bug reports you choose to send.</li>
     <li>No tracking across apps or websites.</li>
     <li>No selling, renting or sharing of data with third parties. There is no data to share.</li>
   </ul>
@@ -255,13 +346,15 @@
   <h2>How long your data is kept</h2>
   <p>For as long as you want. Data lives on your device until you delete it from
   within the app or uninstall Bastion. <strong>Uninstalling the app deletes
-  everything</strong>, and no copy remains anywhere else, so export first whatever
-  you want to keep.</p>
+  everything</strong> on the phone; only the copies you have exported remain and,
+  on iPhone, the system's iCloud backup if you have it turned on. Export first
+  whatever you want to keep.</p>
 
   <h2>Your rights</h2>
   <p>Because all data is on your device and under your direct control, you can
   view, edit, export (as a readable JSON file) and delete it at any time without
-  asking anyone. If you also wish to formally exercise your rights under the
+  asking anyone. If you have sent us a bug report or a suggestion, you can ask for
+  it to be deleted. If you also wish to formally exercise your rights under the
   General Data Protection Regulation, write to the contact address above.</p>
 
   <h2>Children</h2>
@@ -274,7 +367,7 @@
   notified inside the app.</p>
 
   <footer>
-    <a href="soporte.html">Bastion · Soporte / Support</a> · Política de privacidad / Privacy Policy · 1 · 10 · 2026
+    <a href="soporte.html">Bastion · Soporte / Support</a> · Política de privacidad / Privacy Policy · 21 oct 2026 / Oct 21, 2026
   </footer>
 
 </main>
