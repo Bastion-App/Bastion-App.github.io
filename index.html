@@ -2,26 +2,175 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bastion</title>
-<!-- Vista previa de Bastion Web (diseño de Claude Design, datos de ejemplo):
-     todavía no es la web de verdad, así que no se indexa. -->
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="demo/web.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bastion · Gym y Nutrición</title>
+<meta name="description" content="Bastion: registro de entrenos y contador de calorías en una sola app. Ya en el App Store.">
+<meta name="theme-color" content="#101113">
+<link rel="icon" type="image/png" href="img/icono-180.png">
+<link rel="apple-touch-icon" href="img/icono-180.png">
+<!-- Portada provisional (18-nov-2026): la web de Bastion aún no existe. Solo
+     el logo, «Próximamente» y el enlace a la app. Sin degradados (decisión
+     del usuario). Privacidad, soporte, créditos,
+     /r y apple-app-site-association siguen igual: los usa la app.
+     La vista previa vieja de Bastion Web está en /demo/. -->
+<style>
+  :root {
+    --bg: #101113;
+    --text: #f3f4f2;
+    --sub: #9da2a8;
+    --accent: #a3e06c;
+    --line: #26292e;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 16px 32px;
+  }
+  .icono {
+    width: 168px; height: 168px;
+    border-radius: 38px;
+    box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    animation: entra 0.9s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  h1 {
+    margin: 28px 0 0;
+    font-size: clamp(56px, 13vw, 104px);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    animation: entra 0.9s 0.08s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .lema {
+    margin: 12px 0 0;
+    font-size: clamp(18px, 4.4vw, 24px);
+    font-weight: 500;
+    color: var(--sub);
+    letter-spacing: -0.01em;
+    animation: entra 0.9s 0.14s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .pronto {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0 0;
+    padding: 10px 20px 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(163, 224, 108, 0.35);
+    background: rgba(163, 224, 108, 0.08);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    animation: entra 0.9s 0.2s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  /* El punto late despacio: «en marcha». */
+  .pronto i {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgba(163, 224, 108, 0.6);
+    animation: late 2.2s ease-out infinite;
+  }
+  .texto {
+    max-width: 440px;
+    margin: 18px 0 0;
+    color: var(--sub);
+    font-size: 17px;
+    animation: entra 0.9s 0.26s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 28px 0 0;
+    padding: 14px 24px;
+    border-radius: 16px;
+    background: var(--accent);
+    color: #0e1410;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    animation: entra 0.9s 0.32s cubic-bezier(.2, .8, .2, 1) both;
+  }
+  .boton:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(163, 224, 108, 0.6); }
+  .boton svg { width: 18px; height: 18px; }
+  footer {
+    position: relative;
+    padding: 24px 16px calc(24px + env(safe-area-inset-bottom));
+    text-align: center;
+    font-size: 14px;
+    color: var(--sub);
+  }
+  footer a { color: var(--sub); text-decoration: none; margin: 0 10px; }
+  footer a:hover { color: var(--text); }
+  footer p { margin: 10px 0 0; font-size: 13px; opacity: 0.7; }
+  @keyframes entra { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes late {
+    0% { box-shadow: 0 0 0 0 rgba(163, 224, 108, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(163, 224, 108, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(163, 224, 108, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
 </head>
 <body>
-<div id="root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="demo/Data3.jsx"></script>
-<script type="text/babel" src="demo/Core3.jsx"></script>
-<script type="text/babel" src="demo/WebCommon.jsx"></script>
-<script type="text/babel" src="demo/WebNutri.jsx"></script>
-<script type="text/babel" src="demo/WebTrain.jsx"></script>
-<script type="text/babel" src="demo/WebProgress.jsx"></script>
-<script type="text/babel" src="demo/WebProfile.jsx"></script>
-<script type="text/babel" src="demo/WebHome.jsx"></script>
-<script type="text/babel" src="demo/WebApp.jsx"></script>
+<main>
+  <img class="icono" src="img/icono.png" alt="Bastion" width="168" height="168">
+  <h1>Bastion</h1>
+  <p class="lema" id="lema">Gym y Nutrición</p>
+
+  <span class="pronto"><i></i><span id="pronto">Próximamente</span></span>
+  <p class="texto" id="texto">Estamos preparando algo nuevo. Mientras tanto, Bastion ya está en el App Store.</p>
+
+  <a class="boton" href="https://apps.apple.com/app/id6774663583">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.72-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.66-2.14.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.34-3.53zM14.18 6.15c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></svg>
+    <span id="boton">Descargar en el App Store</span>
+  </a>
+</main>
+
+<footer>
+  <a href="privacidad.html" id="lPriv">Privacidad</a>
+  <a href="soporte.html" id="lSop">Soporte</a>
+  <a href="creditos.html" id="lCred">Créditos</a>
+  <p>© 2026 Bastion</p>
+</footer>
+
+<script>
+  // En inglés si el navegador no está en español.
+  if (!/^es\b/i.test(navigator.language || '')) {
+    document.documentElement.lang = 'en';
+    document.title = 'Bastion · Gym & Nutrition';
+    var t = {
+      lema: 'Gym & Nutrition',
+      pronto: 'Coming soon',
+      texto: "We're working on something new. In the meantime, Bastion is already on the App Store.",
+      boton: 'Download on the App Store',
+      lPriv: 'Privacy', lSop: 'Support', lCred: 'Credits'
+    };
+    for (var k in t) document.getElementById(k).textContent = t[k];
+  }
+</script>
 </body>
 </html>
